@@ -1,0 +1,15 @@
+extends layout
+
+block title
+    title Badgerat - Profile
+
+block content
+    include header
+        block navlist
+            li
+                a(href='badges.html') Badges
+            li
+                a(href='logout.html') Log out
+
+    section#canvas
+        p Welcome, BadgeRat

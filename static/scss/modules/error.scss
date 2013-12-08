@@ -1,0 +1,44 @@
+@import "_mixins";
+
+.error {
+
+    input[type='text'], input[type='email'], input[type='password'] {
+        background: #fee;
+    }
+
+    label {
+        @include border-radius(2px);
+        text-shadow: 0 1px 1px rgba(0,0,0,.9);
+        text-align: center;
+        margin: 5px auto 0;
+        width: 280px;
+        color: $clr_error;
+        padding: 10px;
+        background: $bg_error;
+        border: 2px solid darken($bg_error, 5%);
+        position: relative;
+        display: block;
+        z-index: 1;
+        &:before, &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            @include rotate(45);
+        }
+        &:before {
+            background: darken($bg_error, 5%);
+            top: -12px;
+            left: 126px;
+            width: 20px;
+            height: 20px;
+            z-index: 0;
+        }
+        &:after {
+            background: $bg_error;
+            top: -9px;
+            left: 127px;
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

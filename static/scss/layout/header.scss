@@ -1,0 +1,102 @@
+@import "_mixins";
+
+header {
+    border-bottom: 1px solid $clr_theme_3;
+    width: $bp_0;
+    margin: 0 auto;
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+    > a {
+        display: block;
+        float: left;
+        margin-top: 15px;
+    }
+
+    nav {
+        float: right;
+        .btnToggleNav {
+            display: none;
+        }
+    }
+    .icon-more-60 {
+        display: none;
+        width: 60px;
+        height: 60px;
+        margin: 7px 0 0 7px;
+    }
+    .icon-more-32 {
+        display: none;
+        width: 32px;
+        height: 32px;
+        margin: 14px 0 0 14px;
+    }
+
+}
+@media all and (max-width: $bp_1), all and (max-device-width: $bp_1) {
+
+    header {
+        width: 100%;
+        nav {
+            position: relative;
+            width: 75px;
+            height: 75px;
+            background: $clr_theme_3;
+            &:after {
+                content: "";
+                display: block;
+            }
+            .btnToggleNav {
+                display: block;
+                width: 75px;
+                height: 75px;
+            }
+            .navList {
+                @include transition(all, 180ms);
+                display: none;
+            }
+            &:hover {
+                .navList {
+                    display: block;
+                }
+            }
+        }
+        > a {
+            margin-left: 1em;
+        }
+        .icon-more-60 {
+            display: block;
+        }
+    }
+
+}
+
+@media all and (max-width: $bp_2), all and (max-device-width: $bp_2) {
+
+    header {
+    }
+
+}
+
+@media all and (max-width: $bp_3), all and (max-device-width: $bp_3) {
+
+    header {
+        nav {
+            height: 60px;
+            width: 60px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .icon-more-60 {
+            display: none;
+        }
+        .icon-more-32 {
+            display: block;
+        }
+    }
+
+}

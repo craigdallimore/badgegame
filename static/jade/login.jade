@@ -1,0 +1,23 @@
+extends layout
+
+block title
+    title Badgerat - Log In
+
+block content
+    include header
+        block navlist
+            li
+                a(href='/register') Register
+            li
+                a(href='/resetpassword') Reset Password
+
+    section#canvas
+        form.login(action='#', method='post', novalidate)
+            h2 Login
+            fieldset
+                input#email(type='email', name='email', placeholder='email')
+            fieldset
+                input#password(type='password', name='password', placeholder='password')
+            fieldset
+                img.ajaxSpinner(src='/static/img/ajax-loader.gif', style='display: none;', width='16', height='16', alt='Loading...')
+                input#submit(type='submit', value='Log in!', name='submit')

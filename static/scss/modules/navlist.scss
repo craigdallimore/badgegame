@@ -1,0 +1,75 @@
+@import "_mixins";
+
+.navList {
+    overflow: hidden;
+    padding-bottom:15px;
+    a {
+        @include transition(all, 150ms);
+        @include border-radius(5px);
+        background: rgba(0,0,0,0.3);
+        display: block;
+        text-align: center;
+        padding: 15px;
+        &:hover {
+            color: $clr_theme_1;
+            background: $clr_theme_3;
+        }
+        &:active {
+            background: darken($clr_theme_3, 10%);
+            position: relative;
+            top: 1px;
+        }
+    }
+    li {
+        list-style: none;
+        float: left;
+        margin:15px 0 0 15px;
+    }
+}
+
+@media all and (max-width: $bp_1), all and (max-device-width: $bp_1) {
+
+    .navList {
+        @include box-shadow(0 10px 10px rgba(0,0,0,.5));
+        padding: 0;
+        overflow: visible;
+        position: absolute;
+        width: 200px;
+        top: 75px;
+        right: 0;
+        background: $clr_theme_3;
+        border: 1px solid darken($clr_theme_3, 10%);
+        border-top: 0;
+        li {
+            float: none;
+            margin: 0;
+            border-bottom: 1px solid darken($clr_theme_3, 10%);
+            a {
+                @include border-radius(0);
+                text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+                color: $clr_theme_2;
+                background: none;
+                &:hover {
+                    color: $clr_theme_2;
+                    background: lighten($clr_theme_3, 10%);
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: $bp_2), all and (max-device-width: $bp_2) {
+
+
+}
+
+@media all and (max-width: $bp_3), all and (max-device-width: $bp_3) {
+    .navList {
+        top: 60px;
+    }
+
+}

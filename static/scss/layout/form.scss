@@ -1,0 +1,92 @@
+@import "_mixins";
+
+form {
+    width: 600px;
+    margin: 45px auto 0;
+
+    h2 {
+        text-align: center;
+    }
+
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
+    @include transition(all, 150ms);
+    @include border-radius(25px);
+    text-shadow: 0 2px 2px rgba(0,0,0,.2);
+    outline: none;
+    font-size: 1.5em;
+    padding: 10px 15px;
+    margin: 20px auto 0;
+    width: 300px;
+    border: 3px solid $bdr_input;
+    color: $clr_input;
+    display: block;
+    &:focus {
+        @include box-shadow(0 0 25px rgba(255,255,255,0.4));
+        border: 3px solid $clr_theme_3;
+    }
+}
+input[type='submit'] {
+    @include transition(all, 150ms);
+    @include border-radius(25px);
+    @include linear-gradient($clr_theme_3, darken($clr_theme_3, 10%), 1);
+    outline: none;
+    -moz-outline: none;
+    color: $clr_theme_2;
+    cursor: pointer;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.4);
+    border: 2px solid darken($clr_theme_3, 5%);
+    text-align:center;
+    width: 200px;
+    margin: 20px auto;
+    display: block;
+    padding: 10px;
+    font-size: 1.5em;
+    &:focus, &:hover {
+        @include box-shadow(0 0 25px rgba(255,255,255,0.4));
+        @include linear-gradient(lighten($clr_theme_3, 10%), $clr_theme_3, 1);
+    border: 2px solid $clr_theme_3;
+    }
+    &:active {
+        @include box-shadow('inset 0 2px 5px rgba(0,0,0,.3), 0 0 20px rgba(255,255,255,0.6)');
+        background: darken($clr_theme_3, 5%);
+    }
+    &:disabled {
+        @include box-shadow(none);
+        text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+        color: #ccc;
+        background: #aaa;
+        border: 2px solid #444;
+    }
+}
+.ajaxSpinner {
+    display: block;
+    margin: 20px auto 0;
+}
+@media all and (max-width: $bp_1), all and (max-device-width: $bp_1) {
+    form {
+        width: 100%;
+        padding: 1em 1em 0;
+        margin: 0;
+        h2 {
+            text-align: left;
+        }
+    }
+
+}
+
+@media all and (max-width: $bp_2), all and (max-device-width: $bp_2) {
+
+
+}
+
+@media all and (max-width: $bp_3), all and (max-device-width: $bp_3) {
+
+    form {
+        h2 {
+            font-size: 1em;
+        }
+    }
+
+}

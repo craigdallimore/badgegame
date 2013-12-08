@@ -1,0 +1,41 @@
+@import "_mixins";
+
+.splash {
+    h2 {
+        @include rotate(-5);
+        font-size: 5em;
+        color: $clr_theme_2;
+        text-align: center;
+    }
+    .horizon > div {
+        margin: -200px auto 0;
+    }
+
+}
+@media all and (max-width: $bp_1), all and (max-device-width: $bp_1) {
+
+    .splash {
+
+    }
+
+}
+
+@media all and (max-width: $bp_2), all and (max-device-width: $bp_2) {
+
+    .splash {
+        h2 {
+            font-size: 3em;
+        }
+        .horizon > div {
+            margin: -130px auto 0;
+        }
+    }
+
+}
+
+@media all and (max-width: $bp_3), all and (max-device-width: $bp_3) {
+
+    .splash {
+    }
+
+}

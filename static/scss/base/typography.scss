@@ -1,0 +1,40 @@
+@import "_mixins";
+@import "compass/css3";
+
+/* Typography
+---------------------------------------------------------------------------- */
+@include font-face('helsinki', font-files(
+  '../../fonts/helsinki-webfont.ttf',
+  '../../fonts/helsinki-webfont.eot',
+  '../../fonts/helsinki-webfont.svg',
+  '../../fonts/helsinki-webfont.woff'));
+
+h1, h2, h3 {
+  color: $clr_heading;
+  font-family: helsinki;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+}
+
+body {
+  color: $clr_body_copy;
+  font: {
+    size: 0.9em;
+  }
+}
+
+a {
+  color: $clr_link;
+  text-decoration: none;
+  &:hover {
+    color: $clr_link_hover;
+  }
+  &:active {
+    color: $clr_link_active;
+  }
+}
+

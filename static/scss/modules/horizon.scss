@@ -1,0 +1,10 @@
+@import "_mixins";
+
+.horizon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 99%;
+    overflow: visible;
+    height: 1px;
+}
